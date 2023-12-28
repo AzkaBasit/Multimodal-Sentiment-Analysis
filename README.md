@@ -33,6 +33,24 @@ Audio Model: https://drive.google.com/file/d/1dybg6RsVxJsivnfMWi9wp8bcuC5zA8RO/v
 
 ## Dataset:
 LJSpeech-1.1 dataset is used for audio analysis.
-The LJSpeech-1.1 dataset is a publicly available dataset containing a large collection of English single-speaker audiobooks. 
-It consists of approximately 13,100 audio clips, totaling about 24 hours of speech data.
-LJSpeech-1.1 dataset does provide metadata for each audio clip, including the following information: Unique identifier, Text Transcription, Duration.
+The LJSpeech-1.1 dataset is a publicly available dataset containing a large collection of English single-speaker audio clips. 
+It consists of approximately 10,000 audio clips.
+LJSpeech-1.1 dataset provide metadata for each audio clip, including the following information: Unique identifier, Text Transcription, Duration.
+
+# Models Used:
+For this multimodal sentiment analysis system, three different models were selected to handle the textual, image, and audio data: Recurrent Neural Networks (RNNs), Convolutional Neural Networks (CNNs), and Automatic Speech Recognition (ASR) respectively.
+## RNN:
+RNNs were chosen for textual data analysis due to their ability to capture sequential dependencies and handle variable-length input sequences. This makes RNNs well-suited for analyzing sentiment in text, where the order of words and sentences is crucial for understanding the sentiment expressed.
+
+## CNN:
+CNNs were selected for image data analysis. CNNs excel at extracting local and global spatial features from images, making them effective in capturing visual patterns and features that contribute to sentiment. The use of CNNs allows the system to incorporate visual information and enrich the sentiment analysis process.
+
+## ASR:
+ASR, based on a combination of 2D CNN and RNN, was employed for audio data analysis. ASR converts audio signals into textual representations, enabling the integration of auditory information into the sentiment analysis paradigm. This approach allows the system to interpret sentiments expressed through spoken words.
+
+# Difficulties and Limitations:
+-- The textual dataset contained around 1.6 million tweets so although the model performs quite well when tested against user input however its training and testing accuracy ranges around 80 to 85 percent because of some random tweets.
+
+-- Difficulty in gathering data for Visual Sentiment Analysis, the available datasets like t4sa were too large in size to be run on local devices or free cloud resources.
+
+-- Limitation of Resources in the ASR only allowed training upto 10 epochs (on free cloud resources like Google Colab), the model would have performed significantly better if it was trained on more epochs
